@@ -7,7 +7,9 @@
     "test": "npm run unit && npm run eslint && npm run jshint",
     "jshint": "jshint public",
     "eslint": "eslint *.js lib test",
-    "unit": "istanbul cover _mocha test/unit -- -R spec"
+    "unit": "istanbul cover _mocha test/unit -- -R spec",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -19,12 +21,13 @@
     "https": "^1.0.0",
     "vcap_services": "^0.2.0",
     "watson-developer-cloud": "^2.32.0",
-    "numeral": "^1.5.3"
+    "numeral": "^1.5.3",
+    "snyk": "^1.319.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM/watson-banking-chatbot.git"
-    },
+  },
   "engines": {
     "node": ">=4"
   },
@@ -42,5 +45,6 @@
     "prettier": "1.1.0",
     "sinon": "^2.3.2",
     "sinon-test": "^1.0.0"
- }
+  },
+  "snyk": true
 }
